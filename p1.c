@@ -1,19 +1,4 @@
 #include <stdio.h>
-int fun(int);
-main()
-{
-	int k=5;
-	k = fun(k);
-	printf("%d", k);
-}
-fun(a)
-{
-	int s;
-	if (a == 1)
-		return (a);
-	s = a + fun(a-1);
-	return (s);
-}
 
 
 
@@ -31,6 +16,24 @@ fun(a)
 
 
 
+
+
+
+// int fun(int);
+// main()
+// {
+// 	int k=5;
+// 	k = fun(k);
+// 	printf("%d", k);
+// }
+// fun(a)
+// {
+// 	int s;
+// 	if (a == 1)
+// 		return (a);
+// 	s = a + fun(a-1);
+// 	return (s);
+// }
 
 
 
