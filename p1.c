@@ -1,43 +1,62 @@
-#include <stdio.h>
-void input(int *p)
+#include <stdio.h> 
+struct book
 {
-	int i;
-	printf("Enter your number");
-	for (i=0; i<=4; i++)
-		scanf("%d", p+i);
-}
-void display(int *p)
+	int bookid;
+	char title[20];
+	float price;
+};
+struct book input()
 {
-	int i;
-	for (i=0; i<=4; i++)
-		printf(" %d", *(p+i));
+	struct book b;
+	printf("Enter book id, title and price\n");
+	scanf("%d", &b.bookid);
+	fflush(stdin);
+	scanf("%s%f", &b.title, &b.price);
+	return(b);
 }
-void sort( int *p)
+void display(struct book bb)
 {
-	int round, t, i;
-	for (round=1; round<=4; round ++)
-	{
-		for(i=0; i<=4-round; i++)
-			if(*(p+i) > *(p+i+1))
-		{
-			t = *(p+i); // *p=i == a[i]
-			*(p+i) = *(p+i+1);
-			*(p+i+1) = t;
-		}
-	}
+	printf("\nid: %d \ntitle:%s \nprice:%f\n", bb.bookid, bb.title, bb.price);
 }
+void main()
+{
+	struct book b1;
+	b1 = input();
+	display(b1);
+}
+
+
+
+
+/*
+// int length(char*);
+char* reverse(char*);
 main()
 {
-	int a[5];
-	input(a);
-	display(a);
-	sort(a);
-	display(a);
+	// printf("%d", length("Computer"));
+	printf("\n%s", reverse("Computer"));
+}
+char* reverse(char *p)
+{
+	int l,i;
+	char t;
+	for(l=0; *(p+l)!='\0'; l++);
+	for(i=0;i<l/2;i++)
+	{
+		t = *(p+i);
+		*(p+i) = *(p+l-1-i);
+		*(p+l-1-i) = t;
+	}
+	return(p);
 }
 
-
-
-
+// int length(char *p)
+// {
+// 	int i;
+// 	for(i=0;*(p+i)!= '\0';i++);
+// 	return(i);
+// }
+*/
 
 
 
