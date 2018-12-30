@@ -1,17 +1,5 @@
 #include <stdio.h> 
 #include <stdlib.h>
-void main(){
-	FILE *fp;
-	char input[20];
-	char file_name[20];
-	printf("Enter you file name\n");
-	scanf("%s", file_name);
-	fp = fopen(file_name, "w");
-	gets(input);
-	fputs(input, fp);
-	fclose(fp);
-}
-
 
 
 
