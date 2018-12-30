@@ -1,9 +1,34 @@
 #include <stdio.h> 
-#define ABS(a) (a) <0? -(a) :(a)
-void main()
-{
-	printf("\nabs of -1 & 1:%d %d\n", ABS(-1), ABS(-1));
-};
+#include <stdlib.h>
+void main(){
+	FILE *fp;
+	char input[20];
+	char file_name[20];
+	printf("Enter you file name\n");
+	scanf("%s", file_name);
+	fp = fopen(file_name, "w");
+	gets(input);
+	fputs(input, fp);
+	fclose(fp);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #define ABS(a) (a) <0? -(a) :(a)
+// void main()
+// {
+// 	printf("\nabs of -1 & 1:%d %d\n", ABS(-1), ABS(-1));
+// };
 
 
 // int fun(int);
